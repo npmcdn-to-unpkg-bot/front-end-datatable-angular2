@@ -3,6 +3,8 @@ import {DatePipe} from "@angular/common";
 import {HTTP_PROVIDERS, Http} from "@angular/http";
 import {DataTableDirectives} from 'angular2-datatable/datatable';
 import * as _ from 'lodash';
+import { Component, ViewContainerRef} from '@angular/core';
+
 
 
 @Component({
@@ -17,7 +19,7 @@ export class AppComponent {
     private data;
 
     constructor(private http:Http) {
-       http.get('http://localhost:52430/role')
+       http.get('http://localhost:52430/restful/role')
             .subscribe((data)=> {
                 setTimeout(()=> {
                     this.data = data.json();
@@ -33,14 +35,6 @@ export class AppComponent {
       this.data = _.filter(this.data, (elem)=>elem!=item);
       console.log("Remove: ", item.email);
     }
-    public updateItem(http:Http){
-        http.delete('http://localhost:52430/role')
-            .subscribe((data)=> {
-                setTimeout(()=> {
-                    this.data = data.json();
-                }, 1000);
-            });
-    }
-
+    
 
 }

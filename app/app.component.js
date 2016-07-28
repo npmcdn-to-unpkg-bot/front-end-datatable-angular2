@@ -17,7 +17,7 @@ var AppComponent = (function () {
         this.sortByWordLength = function (a) {
             return a.name.length;
         };
-        http.get('http://localhost:52430/role')
+        http.get('http://localhost:52430/restful/role')
             .subscribe(function (data) {
             setTimeout(function () {
                 _this.data = data.json();
@@ -27,15 +27,6 @@ var AppComponent = (function () {
     AppComponent.prototype.removeItem = function (item) {
         this.data = _.filter(this.data, function (elem) { return elem != item; });
         console.log("Remove: ", item.email);
-    };
-    AppComponent.prototype.updateItem = function (http) {
-        var _this = this;
-        http.delete('http://localhost:52430/role')
-            .subscribe(function (data) {
-            setTimeout(function () {
-                _this.data = data.json();
-            }, 1000);
-        });
     };
     AppComponent = __decorate([
         core_1.Component({

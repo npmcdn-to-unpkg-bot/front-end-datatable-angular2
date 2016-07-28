@@ -6,6 +6,16 @@
                     Fixed Header Role Table
                 </h4>
             </div>
+
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2">
+                <span class = "input-group-btn">
+                  <button class = "btn btn-default" type = "button">
+                     Go!
+                  </button>
+               </span>
+            </div>
+
             <table class="table table-fixed" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
                 <thead>
                 <tr>
@@ -33,10 +43,6 @@
                             <span class="glyphicon glyphicon-pencil"></span>
                         </button>
 
-                        <button class="btn btn-info" title="update" (click)="updateItem(item)">
-                            <span class="glyphicon glyphicon-circle-arrow-up"></span>
-                        </button>
-
                         <button class="btn btn-danger" title="remove" (click)="removeItem(item)">
                             <span class="glyphicon glyphicon-trash"></span>
                         </button>
@@ -52,6 +58,8 @@
                 </tfoot>
             </table>
         </div>
-        <button type="button" class="btn btn-success btn-block">Add new role</button>
+        <button type="button" class="btn btn-success btn-block" (click)='open()'>Add new role</button>
     </div>
+
+
 </div>
