@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>
+                    Fixed Header Role Table
+                </h4>
+            </div>
+            <table class="table table-fixed" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
+                <thead>
+                <tr>
+                    <th class="col-xs-2">
+                        <mfDefaultSorter by="roleID">ID</mfDefaultSorter>
+                    </th>
+
+                    <th class="col-xs-8">
+                        <mfDefaultSorter by="name">Name</mfDefaultSorter>
+                    </th>
+
+                    <th class="col-xs-2">
+                        Buttons
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="#item of mf.data">
+                    <td class="col-xs-2">{{item.roleId}}</td>
+
+                    <td class="col-xs-8">{{item.name}}</td>
+
+                    <td class="col-xs-2">
+                        <button class="btn btn-warning" title="edit" (click)="editItem(item)">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+
+                        <button class="btn btn-info" title="update" (click)="updateItem(item)">
+                            <span class="glyphicon glyphicon-circle-arrow-up"></span>
+                        </button>
+
+                        <button class="btn btn-danger" title="remove" (click)="removeItem(item)">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+        <button type="button" class="btn btn-success btn-block">Add new role</button>
+    </div>
+</div>
