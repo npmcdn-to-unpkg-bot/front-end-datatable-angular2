@@ -11,10 +11,10 @@
   //map tells the System loader where to look for things
   var  map = {
     'app':                        'app', // 'dist',
-    'rxjs':                       'https://npmcdn.com/rxjs@5.0.0-beta.6',
-    'angular2-in-memory-web-api': 'https://npmcdn.com/angular2-in-memory-web-api', // get latest
-    'angular2-datatable':         'https://npmcdn.com/angular2-datatable@0.4.0',
-    'lodash':                     'https://npmcdn.com/lodash@4.6.1/lodash.js'
+    'rxjs':                       'https://unpkg.com/rxjs@5.0.0-beta.6',
+    'angular2-in-memory-web-api': 'https://unpkg.com/angular2-in-memory-web-api', // get latest
+    'angular2-datatable':         'https://unpkg.com/angular2-datatable@0.4.0',
+    'lodash':                     'https://unpkg.com/lodash@4.6.1/lodash.js'
   };
 
   //packages tells the System loader how to load when no filename and/or no extension
@@ -37,9 +37,9 @@
       '@angular/upgrade',
   ];
 
-  // add map entries for angular packages in the form '@angular/common': 'https://npmcdn.com/@angular/common@0.0.0-3?main=browser'
+  // add map entries for angular packages in the form '@angular/common': 'https://unpkg.com/@angular/common@0.0.0-3?main=browser'
   packageNames.forEach(function(pkgName) {
-    map[pkgName] = 'https://npmcdn.com/' + pkgName + ngVer;
+    map[pkgName] = 'https://unpkg.com/' + pkgName + ngVer;
   });
 
   // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
